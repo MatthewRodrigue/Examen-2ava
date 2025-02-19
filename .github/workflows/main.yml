@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: TU_USUARIO/docker-mi-app:latest
+          tags: matthewro/docker-mi-app:latest
