@@ -24,6 +24,9 @@ jobs:
       - name: Build and push Docker image
         run: docker build -t usuario/mi-app:latest -f mi-app/Dockerfile .
 
+      - name: List files for debugging
+        run: ls -R
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
