@@ -20,7 +20,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build and push Docker image
+        run: docker build -t usuario/mi-app:latest -f mi-app/Dockerfile .
 
       - name: Build and push Docker image
-        # uses: docker/build-push-action@v3
-        run: docker build -t usuario/mi-app:latest -f mi-app/Dockerfile . 
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: matthewro/docker-mi-app:latest
